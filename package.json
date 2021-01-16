@@ -1,0 +1,31 @@
+{
+  "name": "leavitt_fitness_tracker",
+  "version": "1.0.0",
+  "description": "Physical Fitness Workout Tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeders/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/docl18d/leavitt_fitness_tracker.git"
+  },
+  "author": "Adrein Leavitt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/docl18d/leavitt_fitness_tracker/issues"
+  },
+  "homepage": "https://github.com/docl18d/leavitt_fitness_tracker#readme",
+  "devdependencies": {
+    "nodeman": "^1.1.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.12",
+    "morgan": "^1.10.0"
+  }
+}
