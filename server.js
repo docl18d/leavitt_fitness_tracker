@@ -1,15 +1,11 @@
+require('dotenv').config();
 // Server Dependencies
 const express = require("express");
 // const bodyParser = require('body-parser');
-const path = require('path');
 
 // Database Connection Request
-require('dotenv/config');
 const connectDB = require("./config/connectDB.js")
-
-//Bring in models
-const db = require("./models");
-
+connectDB();
 // Create an instance of the express app.
 let app = express();
 
