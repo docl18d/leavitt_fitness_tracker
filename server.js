@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Host Static Files so css and js files can be retrieved
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static("public"));
 
 // Set the port of our application, process.env.PORT lets the port be set by Heroku
 let PORT = process.env.PORT || 3008;
