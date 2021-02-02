@@ -1,15 +1,9 @@
-require("dotenv").config();
 let mongoose = require("mongoose");
 let db = require("../models");
 
-
-const dbConfig = process.env.MONGODB_URI;
-
-
-mongoose.connect(dbConfig, {
+mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true 
+  useFindAndModify: false
 });
 
 let workoutSeed = [
@@ -90,7 +84,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-4),
+    day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
       {
         type: "resistance",
@@ -103,7 +97,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-3),
+    day: new Date(new Date().setDate(new Date().getDate() - 3)),
     exercises: [
       {
         type: "resistance",
@@ -116,7 +110,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-2),
+    day: new Date(new Date().setDate(new Date().getDate() - 2)),
     exercises: [
       {
         type: "resistance",
@@ -125,17 +119,6 @@ let workoutSeed = [
         weight: 300,
         reps: 10,
         sets: 4
-      }
-    ]
-  },
-  {
-    day: new Date().setDate(new Date().getDate()-1),
-    exercises: [
-      {
-        type: "resistance",
-        name: "Bench",
-        duration: 30,
-        distance: 2
       }
     ]
   }
