@@ -14,9 +14,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-// mongodb+srv://docl18d:password@cluster0.dewam.mongodb.net/workout?retryWrites=true&w=majority
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", 
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost/workout", 
 { 
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -24,7 +23,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
     useUnifiedTopology: true,
 });
 
-app.use(require("./routes"))
+// routes
+app.use(require("./routes/api.js"));
+app.use(require("./routes/homeRoutes.js"));
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}`);
