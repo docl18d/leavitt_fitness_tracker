@@ -14,14 +14,14 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-mongodb+srv://docl18d:password@cluster0.dewam.mongodb.net/workout?retryWrites=true&w=majority
+// mongodb+srv://docl18d:password@cluster0.dewam.mongodb.net/workout?retryWrites=true&w=majority
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", 
 { 
     useNewUrlParser: true,
-    useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false,
+    useUnifiedTopology: true,
 });
 
 app.use(require("./routes"))
