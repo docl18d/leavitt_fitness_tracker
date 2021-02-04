@@ -21,7 +21,8 @@ mongoose.connect(
     useCreateIndex: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
-});
+}).then(() => console.log('connected to db'))
+.catch(err=> console.error('an error has occured', err));
 
 // routes
 app.use(require("./routes/api.js"));
